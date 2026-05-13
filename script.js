@@ -17,12 +17,13 @@ for(let i=0;i<prc.length;i++){
 }
 /*alert(`The sum is : ${sum}`);*/
  let tr=document.createElement('tr');
- let td1=document.createElement('td');
- let td2=document.createElement('td');
- td1.textContent="Total";
- td2.textContent=`${sum}`;
- tr.appendChild(td1);
- tr.appendChild(td2);
+ let td = document.createElement('td');
+
+    td.colSpan = 2;
+
+    td.textContent = `Total Price = ${sum}`;
+
+    tr.appendChild(td);
  
  let table=document.querySelector('table');
  table.appendChild(tr);
