@@ -9,7 +9,7 @@ const getSum = () => {
     }
      
     done=1;
-    let prc=document.querySelectorAll('.price');
+    let prc=document.querySelectorAll('.prices');
 let sum=0;
 for(let i=0;i<prc.length;i++){
         let temp=prc[i].textContent;
