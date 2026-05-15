@@ -17,8 +17,7 @@ for(let i=0;i<prc.length;i++){
 }
 /*alert(`The sum is : ${sum}`);*/
  let tr=document.createElement('tr');
- tr.innerHTML=`<td>Total</td>
-               <td>${sum}</td>`
+ tr.innerHTML=`<td>Total=${sum}</td>`
  
  let table=document.querySelector('table');
  table.appendChild(tr);
