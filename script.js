@@ -1,33 +1,31 @@
 const getSumBtn = document.createElement("button");
-getSumBtn.append("Get Total Price");
-document.body.appendChild(getSumBtn);
-let done=0;
-const getSum = () => {
-//Add your code here
-	if(done!=0){/*initial click 1st done is 0 condition fail then done=1 now the 2nd click done is!=0 so return noting */
-        return ;
-    }
-     
-    done=1;
-    let prc=document.querySelectorAll('.prices');
-let sum=0;
-for(let i=0;i<prc.length;i++){
-        let temp=prc[i].textContent;
-        sum+=Number(temp);
-}
-/*alert(`The sum is : ${sum}`);*/
- let tr=document.createElement('tr');
- let td = document.createElement("td");
+getSumBtn.innerText = "Get Total Price";
 
-    td.colSpan = 2;
-    td.textContent = sum;
+document.body.appendChild(getSumBtn);
+
+const getSum = () => {
+
+    let prices = document.querySelectorAll(".prices");
+
+    let sum = 0;
+
+    prices.forEach((price) => {
+        sum += Number(price.innerText);
+    });
+
+    // Create row
+    let tr = document.createElement("tr");
+
+    // Create cell
+    let td = document.createElement("td");
+
+    td.setAttribute("colspan", "2");
+    td.innerText = sum;
 
     tr.appendChild(td);
- 
- let table=document.querySelector('table');
- table.appendChild(tr);
-  
+
+    // Append to table
+    document.querySelector("table").appendChild(tr);
 };
 
 getSumBtn.addEventListener("click", getSum);
-
